@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tmdbFetch } from "@/lib/tmdb";
 import type { MovieDetail } from "@/lib/types";
+import FavoriteButton from "@/app/components/FavoriteButton";
 
 async function MovieInfo({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -58,6 +59,10 @@ async function MovieInfo({ params }: { params: Promise<{ id: string }> }) {
               {g.name}
             </span>
           ))}
+        </div>
+
+        <div className="mt-6">
+          <FavoriteButton movie={movie} />
         </div>
 
         {movie.tagline ? (
