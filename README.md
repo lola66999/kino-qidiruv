@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Kino qidiruv
 
-## Getting Started
+Mashhur filmlarni ko'rish, qidirish va sevimlilarga saqlash uchun Next.js ilovasi. Ma'lumotlar TMDB API'dan olinadi.
 
-First, run the development server:
+**Live demo:** (deploydan keyin qo'shiladi)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Imkoniyatlar
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Mashhur filmlar ro'yxati (poster, reyting, yil)
+- Film nomi bo'yicha qidiruv
+- Film sahifasi: tavsif, janrlar, davomiyligi
+- Sevimlilar: brauzerda saqlanadi (localStorage)
+- Yuklanish skeleti, xato va 404 sahifalari
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Texnologiyalar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js (App Router), TypeScript, Tailwind CSS, TMDB API
 
-## Learn More
+## Ishga tushirish
 
-To learn more about Next.js, take a look at the following resources:
+1. `git clone https://github.com/lola66999/kino-qidiruv.git`
+2. `npm install`
+3. Loyiha ildizida `.env.local` fayl yarating va TMDB tokeningizni yozing: `TMDB_TOKEN=sizning_tokeningiz`
+4. `npm run dev`
+5. Brauzerda `http://localhost:3000` ni oching
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Nimalarni o'rgandim
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Server component'larda ma'lumot olish va `Suspense` bilan yuklanishni boshqarish
+- Dinamik route (`/movie/[id]`) va `searchParams` bilan qidiruv
+- Custom hook va `localStorage` bilan sevimlilarni saqlash
+- API tokenni `.env.local` da xavfsiz saqlash
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Bu mahsulot TMDB API'dan foydalanadi, lekin TMDB tomonidan tasdiqlanmagan va sertifikatlanmagan.
