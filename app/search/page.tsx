@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { tmdbFetch } from "@/lib/tmdb";
 import type { Movie } from "@/lib/types";
 import MovieGrid from "../components/MovieGrid";
+import MovieGridSkeleton from "../components/MovieGridSkeleton"
 
 export const metadata: Metadata = { title: "Qidiruv" };
 
@@ -55,6 +56,7 @@ export default function SearchPage({
       <Suspense fallback={<p>Qidirilmoqda...</p>}>
         <Results searchParams={searchParams} />
       </Suspense>
+      <Suspense fallback={<MovieGridSkeleton />}></Suspense>
     </div>
   );
 }

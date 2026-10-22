@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { tmdbFetch } from "@/lib/tmdb";
 import type { Movie } from "@/lib/types";
 import MovieGrid from "./components/MovieGrid";
+import MovieGridSkeleton from "./components/MovieGridSkeleton";
 
 async function PopularMovies() {
   const data = await tmdbFetch<{ results: Movie[] }>(
@@ -17,6 +18,7 @@ export default function Home() {
       <Suspense fallback={<p>Yuklanmoqda...</p>}>
         <PopularMovies />
       </Suspense>
+      <Suspense fallback={<MovieGridSkeleton />}></Suspense>
     </div>
   );
 }

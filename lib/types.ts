@@ -5,3 +5,10 @@ export type Movie = {
   vote_average: number;
   release_date: string;
 };
+
+export type MovieDetail = Movie & {
+  tagline: string;
+  overview: string;
+  runtime: number | null;
+  genres: { id: number; name: string }[];
+};
