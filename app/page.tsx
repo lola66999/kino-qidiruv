@@ -20,10 +20,12 @@ async function PopularMovies() {
 export default function Home() {
   return (
     <main className="p-8">
-      <h1 className="mb-4 text-2xl font-bold">Mashhur filmlar</h1>
-      <Suspense fallback={<p>Yuklanmoqda...</p>}>
-        <PopularMovies />
-      </Suspense>
+      <div>
+        <h1 className="mb-4 text-2xl font-bold">Mashhur filmlar</h1>
+        <Suspense fallback={<p>Yuklanmoqda...</p>}>
+          <PopularMovies />
+        </Suspense>
+      </div>
     </main>
   );
 }
